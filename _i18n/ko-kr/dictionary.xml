@@ -463,7 +463,6 @@
   <block id="8e2044cc9d4e8f515ad4809a68d75465" category="paragraph">예를 들어, NFS의 경우:</block>
   <block id="d39eb6e4299503c5d451d19b9645be42" category="paragraph">예를 들어 iSCSI의 경우:</block>
   <block id="ea3d51fb2b16acb7cb260f25bc8965b1" category="summary">Astra Trident는 NetApp에서 관리하는 오픈 소스 스토리지 공급자 및 오케스트레이터입니다. Docker 및 Kubernetes에서 관리하는 컨테이너식 애플리케이션을 위한 스토리지 볼륨을 생성할 수 있습니다.</block>
-  <block id="b9baa6fa560066bf0c9e87d66d1c0664" category="doc">Astra Trident 22.01.1 문서</block>
   <block id="30d965eef5ba25c6b9998ae38270b43e" category="doc">법적 고지</block>
   <block id="e9c44bbfd795a5d63d74c6a77afee70d" category="paragraph">법적 고지 사항은 저작권 선언, 상표, 특허 등에 대한 액세스를 제공합니다.</block>
   <block id="6016a2b341113bf496b719905398ecd2" category="section-title">저작권</block>
@@ -3139,4 +3138,5 @@
   <block id="63d5049791d9d79d86e9a108b0a999ca" category="sidebar">참조하십시오</block>
   <block id="324fb1352ffffb105d10013810c42896" category="sidebar">Kubernetes 및 Astra Trident 오브젝트</block>
   <block id="086e6c16e3fe8e13c336612ef636aa02" category="sidebar">아스트라 트리덴트</block>
+  <block id="80fa8f92dc0ebf122ed30a4a88fda343" category="doc">Astra Trident 22.01 문서</block>
 </blocks>
