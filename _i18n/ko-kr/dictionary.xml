@@ -3139,4 +3139,6 @@
   <block id="324fb1352ffffb105d10013810c42896" category="sidebar">Kubernetes 및 Astra Trident 오브젝트</block>
   <block id="086e6c16e3fe8e13c336612ef636aa02" category="sidebar">아스트라 트리덴트</block>
   <block id="80fa8f92dc0ebf122ed30a4a88fda343" category="doc">Astra Trident 22.01 문서</block>
+  <block id="5a333b18a215ecfd4457ba0e1732654b" category="section-title">Trident가 로드 공유 미러가 구성된 SVM에서 볼륨을 프로비저닝할 수 있습니까?</block>
+  <block id="0e7629426b9d7596800cd5d72f558a7f" category="paragraph">NFS를 통해 데이터를 제공하는 SVM의 루트 볼륨에 로드 공유 미러를 생성할 수 있습니다. ONTAP는 Trident에서 생성한 볼륨의 로드 공유 미러를 자동으로 업데이트합니다. 이로 인해 볼륨 마운팅이 지연될 수 있습니다. Trident를 사용하여 여러 볼륨을 생성할 경우 볼륨 프로비저닝은 ONTAP에서 로드 공유 미러 업데이트에 따라 달라집니다.</block>
 </blocks>
