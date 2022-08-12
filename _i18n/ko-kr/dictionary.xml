@@ -1285,7 +1285,6 @@
   <block id="e3f688f3aa653574b3253640aa98f47c" category="cell">SVM에서 새 볼륨을 프로비저닝할 때 사용되는 접두사 설정한 후에는 업데이트할 수 없습니다</block>
   <block id="a996d2f8e072c583d6cc26aa1e4aba87" category="cell">"삼중류"</block>
   <block id="b6ea9c09f8ac215ea68be83cd0240aac" category="cell">사용량이 이 비율을 초과하면 프로비저닝이 실패합니다. ONTAP * 용 아마존 FSx에는 * 가 적용되지 않습니다</block>
-  <block id="c07510d6ca04643a0f81501d2407311b" category="cell">요청한 볼륨 크기가 이코노미 드라이버에 대한 이 값보다 큰 경우 용량 할당에 실패합니다.</block>
   <block id="9d96dfa28e7454a1119de523123a1e05" category="cell">“”(기본적으로 적용되지 않음)</block>
   <block id="c9a303edbc714d051896c3a678e59a8a" category="cell">'오만유연한'</block>
   <block id="79892588cbecd0b88729ea1a55b2a3a4" category="cell">FlexVol당 최대 LUN 수는 범위[50, 200]에 있어야 합니다.</block>
@@ -3143,4 +3142,5 @@
   <block id="d5d195efeafde24a6a22effd3dd39339" category="list-text">자격 증명 기반: 파일 시스템에 대해 'fsxadmin' 사용자를 사용하거나 SVM용으로 구성된 'vsadmin' 사용자를 사용할 수 있습니다.</block>
   <block id="be5736bb27c63c0a404a25abaa033c45" category="admonition">백엔드를 구성하려면 'fsxadmin' 대신 'vsadmin' 사용자를 사용하는 것이 좋습니다. Astra Trident는 이 사용자 이름과 암호를 사용하여 FSx 파일 시스템과 통신합니다.</block>
   <block id="3f44baef815aed01560d6764fea49ebc" category="cell">CVS 볼륨에 사용되는 GCP 네트워크</block>
+  <block id="66896c99fb06e0b6c86498b249f8217a" category="cell">요청된 볼륨 크기가 이 값보다 큰 경우 용량 할당에 실패합니다.</block>
 </blocks>
