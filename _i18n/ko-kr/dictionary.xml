@@ -402,21 +402,10 @@
   <block id="e4e1c13bb0b14f6cb7608cbecea948ef" category="cell">iSCSI</block>
   <block id="8cd5b262d8d9950185128d052d55f7c8" category="list-text">다음 시스템 패키지를 설치합니다.</block>
   <block id="6bbf3284462dc8b9b90cb1adcd1c0ff4" category="paragraph">'SUDO yum install -y lsscsi iscsi -initiator-utils sg3_utils device-mapper-multipath'</block>
-  <block id="7f50d5e5825124658e17cc8cfaa7f823" category="list-text">다중 경로 데몬을 시작합니다.</block>
-  <block id="87772a853423d643181e2b56bcb4b17f" category="paragraph">'SUDO mpathconf - -enable - -with_multipathd y'</block>
-  <block id="43ce2a55c085b27f271203155d2745e1" category="list-text">'iscsid'와 'multipathd'가 활성화되어 실행되고 있는지 확인합니다.</block>
-  <block id="04c298ec3fc67bce1115cddcc2b3b829" category="paragraph">'SUDO systemctl enable iscsid multipathd''SUDO systemctl start iscsid multipathd'</block>
-  <block id="2cfaa468af4e9de7ba9933d9e0081572" category="list-text">iSCSI 타겟 검색:</block>
-  <block id="f0c700b766cfcc86bc21496513c58391" category="paragraph">'sudo iscsiadm -m discoverydb -t st -p &lt;data_LIF_ip&gt;--discover'</block>
-  <block id="18124bf28831e04dabc4dc81d1d4e69f" category="list-text">검색된 iSCSI 대상에 로그인합니다.</block>
-  <block id="ba64ec4efdc69990967a75a918b83635" category="paragraph">'SUDO iscsiadm -m node -p &lt;data_LIF_ip&gt;--login'</block>
   <block id="8018f5d6ddc4e67678d1659757828deb" category="list-text">"iSCSI" 활성화 및 시작:</block>
-  <block id="8bd830b1ea0595874b57cfd34c877123" category="paragraph">'SUDO systemctl enable iscsi''SUDO systemctl start iscsi'를 활성화합니다</block>
   <block id="28ea88befb3a7f6a8e98e7ea7a4fd35f" category="paragraph">'SUDO apt-get install-y open-iscsi lsscsg3-utils multipath-tools scitools'</block>
   <block id="d0b02d407fd5c75d0e7eac549a852191" category="list-text">다중 경로 설정:</block>
-  <block id="e6693412ed2252a87ece3f264fb334ed" category="paragraph">'SUDO tee /etc/multipath.conf&lt;-'EOF' 기본값 {user_friendly_names yes find_multipath yes}EOF sudo service multipath-tools restart'입니다</block>
   <block id="8bec0eea71974a9138ccfa96983ddcfc" category="list-text">iscsid와 multipathd가 실행 중인지 확인합니다.</block>
-  <block id="0d29eaa34aa7badaae0d49b35a2a0d12" category="paragraph">'SUDO service open-iscsi start sudo service multipath-tools start'를 참조하십시오</block>
   <block id="4cfa22b281cbd36e1a275d61ec23a9b4" category="summary">문제 해결에 도움이 되는 로그를 수집할 수 있습니다. 로그를 수집하는 방법은 Docker 플러그인을 실행하는 방법에 따라 다릅니다.</block>
   <block id="fe1786b49549e8e06a89b9c57d7fc514" category="doc">로그를 수집합니다</block>
   <block id="83f4d02d2dd31f09291e098bf4ae502b" category="list-text">권장 관리 플러그인 방법(예: docker plugin 명령 사용)을 사용하여 Astra Trident를 실행 중인 경우 다음과 같이 봅니다.</block>
@@ -571,65 +560,29 @@
   <block id="c54241e3258a450b02a723d6d751a4f1" category="list-text"><block ref="c54241e3258a450b02a723d6d751a4f1" category="inline-link-rx"></block></block>
   <block id="9d6ffa6ef31bd0b92876314219f18ef5" category="inline-link">Astra API 설명서</block>
   <block id="9c2cf0e947812ecb3fc0bfccaa8b3c61" category="list-text"><block ref="9c2cf0e947812ecb3fc0bfccaa8b3c61" category="inline-link-rx"></block></block>
-  <block id="3381a309aeefac050f7f5319f6757afe" category="summary">제공된 샘플 구성을 사용하여 Astra Trident 설치를 위해 ADS(Astra Data Store) 백엔드를 구성하는 방법에 대해 알아보십시오.</block>
-  <block id="83caf3e7a6bf2dcce3d7d6eab3c8905c" category="doc">Astra Data Store 백엔드를 구성합니다</block>
-  <block id="0b1c01b976c493a4217d6f4b772849b0" category="paragraph">제공된 샘플 구성을 사용하여 Astra Trident 설치를 위한 ADS(Astra Data Store) 백엔드를 구성하는 방법을 알아보십시오.</block>
   <block id="8035d5d39b2b48f6ec1a3133b688513c" category="inline-link">Astra 데이터 저장소</block>
-  <block id="efd5e8dbeec263f783a6cd6ac036c6a9" category="paragraph">를 구성하고 사용합니다<block ref="a026c15058b831feb6de8c4c836387ae" category="inline-link-rx"></block> 백엔드, 다음이 필요합니다.</block>
-  <block id="0033a0be965b04e889c13f8699fa52ca" category="inline-link-macro">Astra Data Store 미리 보기 문서</block>
-  <block id="44353297d28e56e03a6c2fa8ed4c436d" category="list-text">지원되는 ADS 스토리지 시스템입니다. 을 참조하십시오 <block ref="a495e7dcf960e6114a66e71691c841e9" category="inline-link-macro-rx"></block> 를 참조하십시오.</block>
-  <block id="c7f6917a3ac9bd1d4133a82dc3260748" category="list-text">ADS를 호스팅하는 Kubernetes 클러스터의 자격 증명. ADS를 호스팅하는 Kubernetes 클러스터에는 이 Astra Trident 백엔드에서 만들고 관리할 볼륨, 스냅샷 및 엑스포트 정책 리소스 전용 네임스페이스가 있어야 합니다. 다음을 지원하는 ADS를 호스팅하는 Kubernetes 클러스터에는 "kubecononfig"를 사용할 수 있어야 합니다.</block>
-  <block id="cebbe731acfa0b8c520f355bcbfa6dd1" category="list-text">Astrads-system 네임스페이스의 모든 오브젝트를 읽습니다</block>
-  <block id="cb90bccb2cf5bc16b37e39d379d5a5ea" category="list-text">이 Astra Trident 백엔드의 사용을 위해 생성된 네임스페이스에서 오브젝트 읽기/쓰기</block>
-  <block id="2f191460bd4d4750f88513ea54101bed" category="list-text">모든 클러스터 네임스페이스 나열</block>
   <block id="15b7c7ffe264d7b8c61915ff2a6ef96c" category="section-title">백엔드 구성 옵션</block>
   <block id="9d370350f8d0178b5dfbec9def10d13a" category="paragraph">백엔드 구성 옵션은 다음 표를 참조하십시오.</block>
   <block id="83f499a540b1323009c200d6f8cc9396" category="cell">매개 변수</block>
   <block id="5aae2c40b50d296edbd4ba9cfb462b49" category="cell">스토리지 드라이버의 이름입니다</block>
-  <block id="e269f9fe19f18e73c77815dddc019d7b" category="cell">"Astrads - NAS"</block>
   <block id="5afd6479855e8d63f324b6ec2fa787b4" category="cell">사용자 지정 이름 또는 스토리지 백엔드</block>
-  <block id="5b4fc65310144922f0384b20a00bd6ae" category="cell">ADS 클러스터 이름</block>
-  <block id="65e18a0bb1868a9c1e181302d4733dba" category="cell">"클러스터"</block>
-  <block id="d24ec3d66e6303208e4767ec5cccbc76" category="cell">AstraDSCluster 리소스의 이름입니다</block>
   <block id="f3f30d479f6e3b393d917a3b2f88c770" category="cell">'네임스페이스'</block>
-  <block id="a4c39aafd14948aacfcc4f9c6374a875" category="cell">Astra Trident가 모든 ADS 사용자 지정 리소스를 생성하는 네임스페이스입니다</block>
-  <block id="995c6425a4a00f961b0c8a2000c5497c" category="cell">쿠베코무화과다</block>
-  <block id="dc37fa78a7cf3d9ae1dbf70f4430a142" category="cell">ADS Kubernetes 클러스터(Base64 컴팩트 JSON)용 자격 증명</block>
-  <block id="e5f77e38f271802a5a75ecdffe577104" category="cell">"서버 = 4.1"</block>
   <block id="a0f3a965c12688befda99da850903dcb" category="cell">자동 내보내기 정책</block>
   <block id="4a5695a4c9eea28a296b0b2f210a15f8" category="cell">자동 엑스포트 정책 생성 및 업데이트 활성화 [부울]</block>
   <block id="b4ad0dff08149092bc3e4b16572af575" category="cell">자동 내보내기</block>
-  <block id="2949ef191693d444cc1f96962c1fd8ae" category="cell">'autoExportPolicy'가 설정된 경우 Kubernetes 노드 IP를 필터링하기 위한 CIDR 목록입니다</block>
-  <block id="1abbe16b7053d16fb89efaebd94484be" category="cell">["0.0.0.0/0","::/0"]</block>
   <block id="567c7f0eca746ed7513764be5ecf6d03" category="cell">""(기본적으로 적용되지 않음)</block>
   <block id="f2f2c7c3c767da610bd95934104674f6" category="cell">debugTraceFlags를 선택합니다</block>
-  <block id="857a0a2e6dd17cb6e0022d80855b338a" category="cell">문제 해결 시 사용할 디버그 플래그입니다. 예: {"api":false, "method":true}</block>
   <block id="37a6259cc0c1dae299a7866489dff0bd" category="cell">null입니다</block>
   <block id="eea443d4fcc24d4cd2cab08c2a6c062f" category="cell">'라벨'</block>
   <block id="88dce60232453383ab0d1c3c59cc931d" category="admonition">문제 해결 및 자세한 로그 덤프가 필요한 경우가 아니면 debugTraceFlags를 사용하지 마십시오.</block>
-  <block id="0ffdeb640d4a5fc9f33736feec8d274f" category="admonition">YAML에서 kubecononfig 값을 컴팩트 JSON 형식으로 변환한 다음 백엔드 구성에 포함시키기 전에 Base64 형식으로 변환해야 합니다.</block>
-  <block id="5ef844cc326d7b10c0f674ac9b2b3c74" category="paragraph">각 백엔드는 ADS를 호스팅하는 Kubernetes 클러스터의 단일 네임스페이스로 볼륨을 프로비저닝합니다. 다른 네임스페이스에서 볼륨을 만들려면 추가 백엔드를 정의할 수 있습니다. ADS 볼륨은 호스팅 클러스터, 기타 Kubernetes 클러스터 또는 NFS 공유를 마운트할 수 있는 다른 모든 네임스페이스에 연결할 수 있습니다.</block>
-  <block id="f2319c1b13782c7170018cdd5fb7fd49" category="paragraph">구성 파일의 특수 섹션에서 이러한 옵션을 사용하여 각 볼륨의 기본 프로비저닝을 제어할 수 있습니다.</block>
-  <block id="77c62856cfaac230e7c2fd8139d7c2c8" category="paragraph">아래의 구성 예를 참조하십시오.</block>
   <block id="c1a0e97f953c948568aed6c134fc9711" category="cell">사용할 엑스포트 정책</block>
   <block id="9aa82da0cffe247b84587c1cc8e32746" category="cell">"기본값"</block>
-  <block id="ef616ce0e78a1254437e682f723bb5e6" category="cell">새 볼륨의 모드는 8진이어야 하며 "0"으로 시작해야 합니다.</block>
-  <block id="6474dd374337126fa99c86e653ebfd64" category="cell">"0777"</block>
   <block id="31ed61cc3c85d0bb697cd12b77f37fd1" category="cell">스냅숏용으로 예약된 볼륨의 백분율입니다</block>
-  <block id="5964a48430cb8e8190dbd855a8514a0c" category="cell">"5"</block>
   <block id="c07fbc0b2a1a865fe9e3a55c05b4f690" category="cell">"거짓"</block>
   <block id="84d2c2c768bd1900489bad5fb46b4aac" category="cell">"qosPolicy"</block>
-  <block id="115261f04e7f7d964bc608b63a82b482" category="cell">생성된 볼륨에 할당할 QoS 정책</block>
   <block id="9d4568c009d203ab10e33ea9953a0264" category="cell">""</block>
-  <block id="cf04ead37df0a76237b27de327c0cd03" category="admonition">ADS 백엔드에서 생성된 모든 볼륨에 대해 Astra Trident는 스토리지 풀에 있는 모든 레이블을 프로비저닝할 때 스토리지 볼륨으로 복사합니다. 스토리지 관리자는 스토리지 풀별로 레이블을 정의하고 스토리지 풀별로 생성된 모든 볼륨을 그룹화할 수 있습니다. 이를 통해 백엔드 구성 파일에 제공되는 사용자 지정 가능한 레이블 세트를 기반으로 볼륨을 쉽게 구별할 수 있습니다.</block>
-  <block id="b53453343f074fd64ef7129def93f57d" category="section-title">예 1: 최소 백엔드 구성</block>
   <block id="9fe036cdf8651713d44464a40094dc62" category="paragraph">이는 절대적인 최소 백엔드 구성입니다.</block>
-  <block id="7b3ecf601e0eee1c9d097083281abafa" category="example-title">예를 확장합니다</block>
-  <block id="55c1dd55273b867b995333cc3abd250e" category="section-title">예 2: 단일 서비스 수준 구성</block>
-  <block id="8f3db75549f212e0fdab2c542531a95e" category="paragraph">이 예에서는 Astra Trident에서 생성한 모든 스토리지에 동일한 측면을 적용하는 백엔드 파일을 보여 줍니다.</block>
-  <block id="2b00c4aa6134b525e9355d880ecb0c8d" category="section-title">예 3: 가상 스토리지 풀 구성</block>
   <block id="fe8fbdb035f6bebecaf9a52e36d8a595" category="paragraph">이 예에서는 가상 스토리지 풀과 이를 다시 참조하는 StorageClasses와 함께 구성된 백엔드 정의 파일을 보여 줍니다.</block>
-  <block id="a2c81e41622f2e2616b33a689e229c72" category="paragraph">다음 StorageClass 정의는 위의 스토리지 풀을 참조합니다. "parameters.selector` 필드를 사용하여 각 StorageClass에 볼륨을 호스팅하는 데 사용되는 가상 풀을 지정할 수 있습니다. 선택한 가상 풀에 볼륨이 정의되어 있습니다.</block>
   <block id="3f297ef15cde0668e93b35f2752fd4fd" category="section-title">다음 단계</block>
   <block id="3ad256eea0abb551eaab63c84aa3d1f9" category="paragraph">백엔드 구성 파일을 생성한 후 다음 명령을 실행합니다.</block>
   <block id="a61ed3c1ecae587dbee1f2c0ace81e3b" category="paragraph">백엔드 생성에 실패하면 백엔드 구성에 문제가 있는 것입니다. 다음 명령을 실행하여 로그를 보고 원인을 확인할 수 있습니다.</block>
@@ -1135,7 +1088,6 @@
   <block id="46b189b23dfbd5f3f622a1c04590b05e" category="admonition">CSI Snapshotter는 를 제공합니다<block ref="927ab0e919f8034deab1249bed53a289" category="inline-link-rx"></block> 사용자가 기존 v1beta1 스냅샷의 유효성을 검사하고 유효한 리소스 객체인지 확인할 수 있도록 합니다. Validating webhook는 잘못된 스냅샷 개체에 자동으로 레이블을 지정하며 나중에 유효하지 않은 객체가 생성되지 않도록 합니다. Validating webhook은 Kubernetes Orchestrator에 의해 구축됩니다. 유효성을 검사하는 Webhook을 수동으로 배포하는 방법은 지침을 참조하십시오<block ref="07cb3cdda0599ec9f2e82062ecd12e82" category="inline-link-rx"></block>. 유효하지 않은 스냅샷 매니페스트의 예를 찾습니다<block ref="bceda34f0850fc68d82f08741abbc69e" category="inline-link-rx"></block>.</block>
   <block id="f535be08d3997f1a801b132862d99a5c" category="paragraph">아래 예에서는 스냅샷 작업에 필요한 구조를 설명하고 스냅샷을 생성 및 사용하는 방법을 보여 줍니다.</block>
   <block id="551730f3a084f9dee63029647e815d3a" category="section-title">1단계: VolumeSnapshotClass 설정</block>
-  <block id="d7ca7162c394dee752c35d07a92823da" category="inline-link-macro">'VolumeSnapshotClass</block>
   <block id="b91e58d7d80a51e4fa86b9ab27dca505" category="paragraph">볼륨 스냅샷을 생성하기 전에 를 설정합니다 <block ref="c740b46915208e935cb2017421ec0264" category="inline-link-macro-rx"></block>.</block>
   <block id="4744d2c82c1c470ab40280b2ebba0c08" category="paragraph">이 강물은 아스트라 트라이던트 CSI 드라이버를 가리킵니다. 정책이란 '삭제'나 '유지'가 될 수 있습니다. "유지"로 설정하면 "VolumeSnapshot" 객체가 삭제되더라도 스토리지 클러스터의 기본 물리적 스냅샷이 보존됩니다.</block>
   <block id="0ab6380edce0d0e7b8538ebf3215ebbd" category="section-title">2단계: 기존 PVC의 스냅샷을 생성합니다</block>
@@ -1797,7 +1749,6 @@
   <block id="4c774e8a2d80dbc16b0bf55be6c7b358" category="paragraph">배포 사용자 지정에 대한 자세한 내용은 다음 링크를 참조하십시오.</block>
   <block id="711011f15ff69da45006043e93ed8981" category="inline-link-macro">운영자 기반 배포를 사용자 지정합니다</block>
   <block id="8f863c0ccd38c8782b36eedbea08fc5b" category="list-text"><block ref="8f863c0ccd38c8782b36eedbea08fc5b" category="inline-link-macro-rx"></block></block>
-  <block id="85cda507040c129ee606d4d8df583b90" category="inline-link-macro">"tridentctl" 기반 배포를 사용자 지정합니다</block>
   <block id="16486d6f9e6411719306bdb76f0b34fa" category="list-text"><block ref="16486d6f9e6411719306bdb76f0b34fa" category="inline-link-macro-rx"></block></block>
   <block id="d18dc7a4e8caf207dc9c1b49eda35b70" category="admonition">개인 이미지 저장소를 사용하는 경우 Kubernetes 버전 1.17 이전의 Kubernetes에서는 /k8scsi를, Kubernetes 버전 1.17 이후의 경우에는 개인 레지스트리 URL 끝에 '/sig-storage'를 추가해야 합니다. tridentctl 배포를 위해 개인 레지스트리를 사용할 때는 '--trident-image' 및 '--autosupport-image'를 '--image-registry'와 함께 사용해야 합니다. Trident 연산자를 사용하여 Astra Trident를 배포하는 경우 Orchestrator CR에 설치 매개변수에 "tridentImage" 및 "autostsupportImage"가 포함되어 있는지 확인합니다.</block>
   <block id="47c0166da57a75ed65ddb766c838a91c" category="section-title">원격 배포</block>
@@ -2260,7 +2211,6 @@
   <block id="19f60a36276037e5b82b5096d2ba7a5c" category="paragraph">다음은 ONTAP SnapMirror 볼륨 복제 설정 단계에 대한 개요입니다.</block>
   <block id="c4e9d0a10c58301ad78e9e9bf74f9229" category="list-text">볼륨이 상주하는 클러스터와 볼륨의 데이터를 제공하는 SVM 간에 피어링을 설정합니다.</block>
   <block id="b1c132fa6284fd6d42f93781032cd962" category="list-text">관계의 동작을 제어하고 해당 관계에 대한 구성 특성을 지정하는 SnapMirror 정책을 생성합니다.</block>
-  <block id="d9934e78a9254dde4a227181c30fa2d2" category="inline-link">'스냅샷 생성' 명령</block>
   <block id="0a30bcd5b223c18be449821765a8ec07" category="list-text">를 사용하여 타겟 볼륨과 소스 볼륨 사이에 SnapMirror 관계를 생성합니다<block ref="bfbfdbcdb00ddafcc3e3ca740d1d316b" category="inline-link-rx"></block> 적절한 SnapMirror 정책을 할당합니다.</block>
   <block id="20872623d19783e0dbe00afcdcb9ba46" category="list-text">SnapMirror 관계가 생성된 후 소스 볼륨에서 타겟 볼륨으로의 기본 전송이 완료되도록 관계를 초기화합니다.</block>
   <block id="af1fe101ed84f2b2bc465f0a9e92a35f" category="image-alt">에는 SnapMirror 볼륨 복제 설정이 나와 있습니다.</block>
@@ -2396,8 +2346,6 @@
   <block id="8d66ed6671344ec6017707c38250329c" category="admonition">19.04 이전 버전의 모든 업그레이드를 수행하려면 Astra Trident의 메타데이터를 자체 "etcd"에서 CRD 개체로 마이그레이션해야 합니다. 업그레이드 작동 방식을 이해하려면 릴리즈 설명서를 확인하십시오.</block>
   <block id="33966eba1ed0cde6afda5a97ffaffb09" category="inline-link">보안 컨텍스트</block>
   <block id="ceb268093ddd5aa9df1769eda5d1c8cd" category="inline-link">샘플 입력</block>
-  <block id="9d267d893296d1b56789c03ad196afc8" category="inline-link">"토리지 클래스 기본형.YAML.템블"</block>
-  <block id="4e4578e23d9d48bd9338b1581f884392" category="inline-link">'Storage-class-bronze-default.YAML'을 선택합니다</block>
   <block id="1ca02e26ff81cefae18a0a8d994ca94a" category="admonition">업그레이드 시 Astra Trident가 사용하는 scorageClades에 parameter.fsType을 제공하는 것이 중요합니다. 기존 볼륨을 방해하지 않고 'torageClasses'를 삭제하고 다시 생성할 수 있습니다. 이것은 시행에 대한 ** 요구 사항입니다<block ref="cafe4c6014d8c45aaac70e49318f1a2a" category="inline-link-rx"></block> SAN 볼륨: 를 클릭합니다<block ref="25daec0b57549a6ad43dbc62a9e717ca" category="inline-link-rx"></block> 디렉토리에는 과 같은 예가 포함되어 있습니다<block ref="d308f4d12b21bf269d64643e1eceeeb2" category="inline-link-rx"></block> 및<block ref="b6ff3ec2ac914a047085c08d5843e316" category="inline-link-rx"></block>. 자세한 내용은 을 참조하십시오 <block ref="139a59f2208174d2bf825b80dc580275" category="inline-link-macro-rx"></block>.</block>
   <block id="17cfb8bd7f378fa26b63ee73d467cb82" category="section-title">어떤 업그레이드 경로를 선택해야 합니까?</block>
   <block id="46940159293e259bcf0bb4df75448100" category="paragraph">다음 경로 중 하나를 사용하여 업그레이드할 수 있습니다.</block>
@@ -2418,7 +2366,6 @@
   <block id="6d68e880fd5e5254e122e99a78417abd" category="list-text">아스트라 트리덴트(Astra Trident)를 설치 및 관리하는 데 사용되는 맞춤형 리소스인 트리젠테시너(트리젠오케스트레이터)가 교체됐습니다. 또 트리엔오케스트레이터 사양에 새로운 필드가 도입된다. 사용자는 'pec.namespace` 필드를 사용하여 네임스페이스 Trident를 설치/업그레이드하도록 지정할 수 있습니다. 예를 들어 보겠습니다<block ref="2890210b17eb9668a60ececdebcd5910" category="inline-link-rx"></block>.</block>
   <block id="7d224494dc0d22edaed4c965cdddffe6" category="inline-link-macro">Trident 연산자를 사용하여 업그레이드합니다</block>
   <block id="85f4fc5b4c12e5ede408e45a6d484dc1" category="list-text"><block ref="85f4fc5b4c12e5ede408e45a6d484dc1" category="inline-link-macro-rx"></block></block>
-  <block id="b41f68e89b7b02a9077fb800d31a2fbe" category="inline-link-macro">tridentctl을 사용하여 업그레이드합니다</block>
   <block id="efb20f59615d4d5ee0437ba57aecbe50" category="list-text"><block ref="efb20f59615d4d5ee0437ba57aecbe50" category="inline-link-macro-rx"></block></block>
   <block id="f71fd95d4de4797557e6830c1448c945" category="summary">tridentctl을 사용하여 기존 Astra Trident 설치를 쉽게 업그레이드할 수 있습니다.</block>
   <block id="2a21586f7990f8cb0f8951cd2ef7bc3b" category="doc">tridentctl로 업그레이드하십시오</block>
@@ -2523,7 +2470,6 @@
   <block id="c34156b367bae1b376f09b89d3be7992" category="list-text">'&lt;trident-address&gt;/trident/v1/&lt;object-type&gt;/&lt;object-name&gt;': 명명된 개체의 세부 정보를 가져옵니다.</block>
   <block id="a02439ec229d8be0e74b0c1602392310" category="section-title">게시</block>
   <block id="6692e2cd6834e6b9b2151799cac2a9f8" category="paragraph">'&lt;triment-address&gt;/triment/v1/&lt;object-type&gt;': 지정된 형식의 개체를 만듭니다.</block>
-  <block id="ce87eb03803d5633c163541464e9e7f2" category="inline-link-macro">트리덴ctl의 명령과 옵션</block>
   <block id="3d2bacacf0178e742d5abb2abc32d431" category="list-text">생성할 개체의 JSON 구성이 필요합니다. 각 개체 유형의 사양은 을 참조하십시오 <block ref="e87a326653960de9774fcc58ee9fa490" category="inline-link-macro-rx"></block>.</block>
   <block id="5b2f45c3d098b61927afda859c9144f8" category="list-text">개체가 이미 있는 경우 동작이 달라집니다. backends는 기존 개체를 업데이트하지만 다른 모든 개체 형식은 작업에 실패합니다.</block>
   <block id="32f68a60cef40faedbc6af20298c1a1e" category="section-title">삭제</block>
@@ -3090,7 +3036,6 @@
   <block id="91186d69835ccf9911e356f74938c539" category="list-text">여러 Astra Trident 인스턴스에서 백엔드를 사용할 경우 각 백엔드 구성 파일의 ONTAP 백엔드에 대해 서로 다른 'toragePrefix' 값을 사용하거나 SolidFire 백엔드에 다른 'TenantName'을 사용해야 합니다. Astra Trident는 Astra Trident의 다른 인스턴스가 생성한 볼륨을 감지할 수 없습니다. Astra Trident가 볼륨 생성을 idemptent 작업으로 처리하므로 ONTAP 또는 SolidFire 백엔드에서 기존 볼륨을 생성하려고 하면 성공합니다. 'toragePrefix' 또는 'TenantName'이 서로 다를 경우 같은 백엔드에서 생성된 볼륨의 이름 충돌이 있을 수 있습니다.</block>
   <block id="9bf4c601179068ff3574d2cf87536564" category="list-text">Astra Trident('tridentctl' 또는 Trident Operator 사용)를 설치하고 tridentctl을 사용하여 Astra Trident를 관리하는 경우 'KUBEBEECONFIG' 환경 변수를 설정해야 합니다. 이는 Kubernetes 클러스터가 트리덴트틀과 연동되어야 한다는 것을 나타내기 위해 필요합니다. 여러 Kubernetes 환경에서 작업할 경우 'KUBECONFIG' 파일을 정확하게 소싱해야 합니다.</block>
   <block id="6d791d3b45515fd8619e489b938f39e8" category="inline-link">마운트 옵션</block>
-  <block id="d4b9b9554fd820f43eae492d33e41167" category="inline-link">'원어클래스'</block>
   <block id="a5c785ee36f0f2d14349653f744c8e3b" category="list-text">iSCSI PVS에 대해 온라인 공간 재확보를 수행하려면 작업자 노드의 기본 OS에 볼륨에 마운트 옵션을 전달해야 할 수 있습니다. 이는 디카드(disscard)가 필요한 RHEL/RedHat CoreOS 인스턴스에 적용됩니다<block ref="2ee633fb26bfccf07d490458d29f92a2" category="inline-link-rx"></block>에 mountmounted 폐기 옵션이 포함되어 있는지 확인합니다<block ref="b44436f062a8f5a535d8cafcffeb70b2" category="inline-link-rx"></block> 온라인 블록 삭제를 지원합니다.</block>
   <block id="c2ebda3702872aaa7ad44122f2343d7e" category="list-text">Kubernetes 클러스터당 Astra Trident 인스턴스가 두 개 이상 있는 경우, Astra Trident가 다른 인스턴스와 통신할 수 없고 자신이 생성한 다른 볼륨을 검색할 수 없기 때문에 클러스터 내에서 둘 이상의 인스턴스가 실행될 경우 예기치 않거나 잘못된 동작이 발생합니다. Kubernetes 클러스터당 하나의 Astra Trident 인스턴스만 있어야 합니다.</block>
   <block id="294f8c33b7ccdbcbf422998b64c9c931" category="list-text">Astra Trident가 오프라인인 상태에서 Astra Trident 기반의 'torageClass' 객체를 Kubernetes에서 삭제하면, Astra Trident는 온라인 상태가 되었을 때 데이터베이스에서 해당 스토리지 클래스를 제거하지 않습니다. tridentctl이나 REST API를 사용하여 이러한 스토리지 클래스를 삭제해야 합니다.</block>
@@ -3127,7 +3072,6 @@
   <block id="e08bfc79c5202517b3814efd6e82fb2c" category="sidebar">Trident 업그레이드 또는 제거</block>
   <block id="0460583622f03a52d7693094d6fa2452" category="sidebar">개념</block>
   <block id="cc4a0df2c635530d752308ab5a1c4b89" category="sidebar">ANF 백엔드를 구성합니다</block>
-  <block id="498784627f42c14468b84a1a351bd462" category="sidebar">ADS 백엔드를 구성합니다</block>
   <block id="58eaebf972358f1cf03d386a4ade1a0f" category="sidebar">다음 단계</block>
   <block id="a20f982d79c3dd66d244ffe0f7d940ee" category="sidebar">모범 사례 및 권장사항</block>
   <block id="c91cf7abea9584bc1edbc8ff4948ada0" category="sidebar">Astra Trident 통합</block>
@@ -3143,4 +3087,8 @@
   <block id="be5736bb27c63c0a404a25abaa033c45" category="admonition">백엔드를 구성하려면 'fsxadmin' 대신 'vsadmin' 사용자를 사용하는 것이 좋습니다. Astra Trident는 이 사용자 이름과 암호를 사용하여 FSx 파일 시스템과 통신합니다.</block>
   <block id="3f44baef815aed01560d6764fea49ebc" category="cell">CVS 볼륨에 사용되는 GCP 네트워크</block>
   <block id="66896c99fb06e0b6c86498b249f8217a" category="cell">요청된 볼륨 크기가 이 값보다 큰 경우 용량 할당에 실패합니다.</block>
+  <block id="c5e9849ca6abd11c3d0615c338c6a231" category="paragraph">RHEL/CentOS 7</block>
+  <block id="3d945423f8e9496c429a5d8c65b4604f" category="paragraph">우분투</block>
+  <block id="5d40a2b5dc4a222fe46fe927bb2bb348" category="inline-link-macro">block ref="c67fd1b99934afa248dfeb285a9a4191" prefix="" category='inline-code'/&gt; 기반 구축을 사용자 지정하십시오</block>
+  <block id="d874cb235ec1b03394e3293dc2c95d44" category="inline-link-macro">block ref="c67fd1b99934afa248dfeb285a9a4191" prefix="" category='inline-code'/&gt;를 사용하여 업그레이드하십시오</block>
 </blocks>
