@@ -88,7 +88,7 @@ $ helm install <name> netapp-trident/trident-operator --version 22.1.0 --set tri
 
 === 1단계: Kubernetes 클러스터 검증
 
-가장 먼저 해야 할 일은 Linux 호스트에 로그인하여 해당 호스트가 관리 중인 _ 작업 _ 을(를) 관리하고 있는지 확인하는 것입니다. link:requirements.html["지원되는 Kubernetes 클러스터"^] 에 필요한 권한이 있어야 합니다.
+가장 먼저 해야 할 일은 Linux 호스트에 로그인하여 해당 호스트가 관리 중인 _ 작업 _ 을(를) 관리하고 있는지 확인하는 것입니다. link:../trident-get-started/requirements.html["지원되는 Kubernetes 클러스터"^] 에 필요한 권한이 있어야 합니다.
 
 
 NOTE: OpenShift에서는 뒤에 나오는 모든 예시에서 kubtl 대신 OC를 사용하고, OC login-u system:admin 또는 OC login-u kubbe-admin을 실행하여 먼저 * system:admin * 으로 로그인합니다.
