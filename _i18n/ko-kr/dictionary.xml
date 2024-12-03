@@ -2194,13 +2194,6 @@
   <block id="b6a8ac29724d88dfaec657edda424d98" category="paragraph">양방향 CHAP를 구축하여 호스트와 NetApp HCI 및 SolidFire 백엔드 간의 인증을 보장하는 것이 좋습니다. Astra Trident는 테넌트당 2개의 CHAP 암호를 포함하는 비밀 객체를 사용합니다. Trident를 CSI 구축 담당자로 설치하면 CHAP 암호를 관리하고 해당 PV의 "tridentvolume" CR 객체로 저장합니다. PV를 생성할 때 CSI Astra Trident는 CHAP 암호를 사용하여 iSCSI 세션을 시작하고 CHAP를 통해 NetApp HCI 및 SolidFire 시스템과 통신합니다.</block>
   <block id="19cde2e69238c98382d677e2583cbc46" category="admonition">CSI Trident에서 생성한 볼륨은 볼륨 액세스 그룹과 연결되지 않습니다.</block>
   <block id="3179d8563cd49690a141c34c045dfab8" category="paragraph">CSI가 아닌 프런트엔드에서는 작업자 노드의 디바이스로 볼륨을 연결하는 작업을 Kubernetes에서 처리합니다. 볼륨 생성 후 Astra Trident는 NetApp HCI/SolidFire 시스템에 API 호출을 통해 해당 테넌트의 암호가 아직 없는 경우 비밀을 검색합니다. 그런 다음 Astra Trident가 Kubernetes에 비밀을 전달합니다. 각 노드에 위치한 kubelet은 Kubernetes API를 통해 기밀에 액세스하고 이를 사용하여 볼륨에 액세스하는 각 노드와 볼륨이 있는 NetApp HCI/SolidFire 시스템 간에 CHAP를 실행/사용하도록 설정합니다.</block>
-  <block id="34c4dac14496e9c45d92f345d9392fc8" category="summary">최신 버전을 실행하지 않는 경우 Astra Trident의 이전 릴리스에 대한 문서를 사용할 수 있습니다.</block>
-  <block id="ba09ee47d11962c1ccd13d7e1f10e6c5" category="doc">이전 버전의 문서</block>
-  <block id="b0f4f0ac7ea6be4c3047dd422c23539b" category="paragraph">Astra Trident 22.01을 실행하지 않는 경우 이전 릴리스에 대한 문서를 사용할 수 있습니다.</block>
-  <block id="cce172403b73af5c2a4e93081affcc7f" category="inline-link">Astra Trident 21.10</block>
-  <block id="606b9e83fb467a43b3065d4fd5037094" category="list-text"><block ref="606b9e83fb467a43b3065d4fd5037094" category="inline-link-rx"></block></block>
-  <block id="a93e9e44b7a375a4236260f5ff2b251e" category="inline-link">Astra Trident 21.07</block>
-  <block id="3830d427e146a8a64454dc373d9b1502" category="list-text"><block ref="3830d427e146a8a64454dc373d9b1502" category="inline-link-rx"></block></block>
   <block id="dec54888538ac86f51d29a3d043e6bf6" category="summary">운영자를 사용하여 기존 Astra Trident 설치를 쉽게 업그레이드할 수 있습니다.</block>
   <block id="5ff3faebb0ff710340bdbee89a4667ad" category="doc">운영자와 함께 업그레이드하십시오</block>
   <block id="056b6e39cb1ae24d946674f95697989a" category="paragraph">운영자를 사용하여 기존 Astra Trident 설치를 쉽게 업그레이드할 수 있습니다.</block>
@@ -2867,8 +2860,6 @@
   <block id="5dd03e8d039863e563e049be198c3fd3" category="doc">릴리즈 노트</block>
   <block id="2e6ce374ac42de81aea6a3d682b92e33" category="paragraph">릴리즈 노트 최신 버전의 Astra Trident에 새로운 기능, 개선 사항 및 버그 수정 사항에 대한 정보를 제공합니다.</block>
   <block id="e4c4d344a524d21b898e4d04b6539aa7" category="admonition">설치 프로그램 zip 파일에 제공되는 Linux용 tridentctl 바이너리는 테스트되고 지원되는 버전입니다. zip 파일의 '/Extras' 부분에 제공된 'macos' 바이너리는 테스트되거나 지원되지 않습니다.</block>
-  <block id="368b120a3b5f53a49dc3ab96ec9b8dbd" category="paragraph">NetApp은 제품과 서비스를 지속적으로 개선 및 개선하고 있습니다. Astra Trident의 최신 기능 몇 가지를 소개합니다. 이전 릴리스는 를 참조하십시오<block ref="25da125dffad1d6323c21354bccf0203" category="inline-link-rx"></block>.</block>
-  <block id="7072ec708b0ea7e3243747d8b79c0d20" category="admonition">이전 Trident 릴리스에서 업그레이드하고 Azure NetApp Files를 사용하는 경우 이제 ''location'' config 매개 변수는 필수 싱글톤 필드입니다.</block>
   <block id="41cf959adc98386b54829d71a6ed5d37" category="section-title">수정</block>
   <block id="a98b2ebbcbb381d3abc81e2ecfb2054c" category="inline-link-macro">GitHub 문제 #691</block>
   <block id="61465c1d4383dd4afdf168925e15e767" category="list-text">삭제된 노드에서 볼륨 게시를 취소하는 문제 해결 (<block ref="5fee6ab43e8008edba54375694a29266" category="inline-link-macro-rx"></block>)</block>
@@ -2943,7 +2934,6 @@
   <block id="b622c74429f1282e8ed1f79ee8d53260" category="paragraph">컨테이너 채널에는 컨테이너 사용자(Astra Trident 개발자 포함)의 활발한 공공 커뮤니티도 있습니다<block ref="e5c49b87a1fe6d362b72260d2620cf35" category="inline-link-rx"></block>. 프로젝트에 대한 일반적인 질문을 하고 비슷한 생각을 가진 동료와 관련 주제를 논의할 수 있는 좋은 장소입니다.</block>
   <block id="d327e8f24b63b83e091dccdc48dd7b1b" category="sidebar">Astra Trident 문서</block>
   <block id="7d0ee6fed10d3d4e5c9ee496729ab519" category="sidebar">릴리스 정보</block>
-  <block id="93168a8084b3e838d2932c4734bd234e" category="sidebar">이전 버전</block>
   <block id="eb1f347fa6176ae2c9175df3bc414954" category="sidebar">Astra Trident를 사용해 보십시오</block>
   <block id="f14894e4c400a400c02367258a93029a" category="sidebar">Docker를 위한 Astra Trident</block>
   <block id="e08bfc79c5202517b3814efd6e82fb2c" category="sidebar">Trident 업그레이드 또는 제거</block>
@@ -3070,4 +3060,5 @@
   <block id="f8b52d963f246a75dc6c8b78c954a4fd" category="list-text"><block ref="f8b52d963f246a75dc6c8b78c954a4fd" category="inline-link-rx"></block></block>
   <block id="b6780b7b2561935ff862fe7126cde751" category="list-text"><block ref="b6780b7b2561935ff862fe7126cde751" category="inline-link-rx"></block></block>
   <block id="b9a641d903e611a87a5e68ac7fdb0b84" category="list-text">Trident AutoSupport는 개인 식별 정보(PII) 또는 개인 정보를 수집하거나 전송하지 않습니다. 에는 Trident 컨테이너 이미지 자체에 적용할 수 없는 가<block ref="173a360b412944768c2ab13e6c8fd1c7" category="inline-link-rx"></block> 포함되어 있습니다. 데이터 보안 및 신뢰에 대한 NetApp의 노력에 대해 더 자세히 알아볼 수<block ref="d3cc55401bc8303e01c6b0c43ba0733f" category="inline-link-rx"></block>있습니다.</block>
+  <block id="9bbe247417ec112bd7f3be36a4035717" category="paragraph">NetApp은 제품과 서비스를 지속적으로 개선 및 개선하고 있습니다. Astra Trident의 최신 기능 몇 가지를 소개합니다.</block>
 </blocks>

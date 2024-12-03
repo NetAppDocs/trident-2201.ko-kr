@@ -20,10 +20,7 @@ WARNING: 설치 프로그램 zip 파일에 제공되는 Linux용 tridentctl 바�
 
 == 22.01.1의 새로운 기능
 
-NetApp은 제품과 서비스를 지속적으로 개선 및 개선하고 있습니다. Astra Trident의 최신 기능 몇 가지를 소개합니다. 이전 릴리스는 를 참조하십시오 https://docs.netapp.com/us-en/trident/earlier-versions.html["이전 버전의 문서"].
-
-
-IMPORTANT: 이전 Trident 릴리스에서 업그레이드하고 Azure NetApp Files를 사용하는 경우 이제 ''location'' config 매개 변수는 필수 싱글톤 필드입니다.
+NetApp은 제품과 서비스를 지속적으로 개선 및 개선하고 있습니다. Astra Trident의 최신 기능 몇 가지를 소개합니다.
 
 
 
