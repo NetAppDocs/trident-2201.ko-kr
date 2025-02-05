@@ -52,7 +52,7 @@ sidebar:
   - section: trident-reco
   - section: trident-reference
   - title: 법적 고지
-    url: "/legal.html"
+    url: "/legal-notices.html"
 product-family:
   name: Astra
   repo: astra-family
